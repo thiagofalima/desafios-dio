@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2 - Clínica Médica</title>
+    <style>
+        .navbar, .footer {
+            width: 100;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        a, .footer {
+            text-decoration: none;
+            color: darkgreen;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        li {
+            list-style:none;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="../assets/contato.png" width="50" alt="">
+        <nav class="navbar">
+            <a href="./desafio_2.html" class="navbar-link">Página Principal</a>
+            <a href="./sobre.html" class="navbar-link">Sobre a Clínica</a>
+            <a href="./horario.html" class="navbar-link">Horário de Atendimento</a>
+            <a href="./contato.html" class="navbar-link">Contato</a>
+        </nav>
+    </header>
+    <h1 href="#" class="title">Clínica de Neurologia</h1>
+        <main class="main">
+            <aside class="menu">
+                <ul>
+                    <li><a href="" class="menu-link">Home</a></li>
+                    <li><a href="" class="menu-link">Sobre</a></li>
+                    <li><a href="" class="menu-link">Horários</a></li>
+                    <li><a href="" class="menu-link">Contato</a></li>
+                </ul>
+            </aside>
+            <section class="content">
+                <p>Telefone: 11 99999-9999</p>
+                <p>Whats App: 11 99999-9999</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14613.517833952063!2d-46.54516095586165!3d-23.698139671741707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sprefeitura%20de%20s%C3%A3o%20bernardo!5e0!3m2!1spt-BR!2sbr!4v1743442442721!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <form action="" class="form">
+                    <label>
+                        Nome:
+                        <input type="text">
+                    </label><br>
+                    <label>
+                        E-mail:
+                        <input type="email">
+                    </label><br>
+                    <label>
+                        Assunto: 
+                        <input type="text">
+                    </label><br>
+                    <label>
+                        Mensagem:
+                        <textarea></textarea>
+                    </label><br>
+                    <button type="submit">Enviar</button>
+                </form>    
+            </section>
+        </main>
+
+        <footer class="footer">
+            Direitos Registrados &copy;
+        </footer>
+</body>
+</html>
