@@ -8,6 +8,12 @@
 
 // }
 
+const pokemonList = document.querySelector('#pokemonList');
+const loadMoreButton = document.querySelector('#loadMore');
+const maxRecords = 151; 
+const limit = 10;
+let offset = 0;
+
 function convertPokemonTypesToLi(pokemonTypes) {
     return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`) 
 }
@@ -28,12 +34,30 @@ function convertPokemonToLi(pokemon) {
     `;
 }
 
-const pokemonList = document.querySelector('#pokemonList');
 
-
-pokeApi.getPokemons().then((pokemons = []) => {
-
+function loadPokemonItens(offset, limit) {
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
     pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('');
+    })
+}
+
+loadPokemonItens(offset, limit)
+
+loadMoreButton.addEventListener('click', () => {
+    offset += limit;
+
+    const qtdRecordNextPage = offset + limit;
+
+    if (qtdRecordNextPage >= maxRecords) {
+        const newLimit = maxRecords - offset;
+        loadPokemonItens(offset, newLimit);
+        loadMoreButton.parentElement.removeChild(loadMoreButton);
+    } else {
+        loadPokemonItens(offset, limit)
+    }
+
+    
+})
 
     // const listItems = [];
     // for (let i = 0; i < pokemons.length; i++) {
@@ -41,5 +65,3 @@ pokeApi.getPokemons().then((pokemons = []) => {
     //     listItems.push(convertPokemonToLi(pokemon));
     // }
     // console.log(listItems);
-})
-
